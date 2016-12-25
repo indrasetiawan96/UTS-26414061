@@ -1,0 +1,4 @@
+curl -o API_SI.POV.GINI_DS2_en_csv_v2.zip http://api.worldbank.org/v2/en/indicator/SI.POV.GINI?downloadformat=csv
+unzip API_SI.POV.GINI_DS2_en_csv_v2.zip
+sed -n '/[^[:space:]]/p' API_SI.POV.GINI_DS2_en_csv_v2.csv | wc -l
+cat API_SI.POV.GINI_DS2_en_csv_v2.csv | sed -e 's/,,/, ,/g' | column -s, -t | less -#5 -N -S
